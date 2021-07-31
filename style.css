@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+:root {}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(229, 57%, 11%);
+    font-family: 'Raleway', sans-serif;
+}
+
+#background-desktop-image, #background-mobile-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50vh;
+    z-index: -1;
+}
+
+#background-mobile-image {
+    display: none;
+}
+
+.information {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: content-box;
+}
+
+.information .business-information {
+    margin-right: 30px;
+}
+
+.business-information {
+    width: 17.5rem;
+    height: 12.5rem;
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 10px 100px 10px 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    padding: 2% 5%;
+    box-sizing: border-box;
+}
+
+.tools {
+    display: flex;
+}
+
+.tools button {
+    margin-right: 10px;
+    background-color: hsl(229, 57%, 11%);
+    border: none;
+    padding: 7px 10px;
+    border-radius: 7px;
+}
+
+.tools button svg {
+    fill: hsl(229, 57%, 11%);
+}
+
+.progress {
+    position: relative;
+    width: 35rem;
+    background-color: hsl(228, 56%, 26%);
+    border-radius: 10px 10px 10px 10px;
+    align-self: flex-end;
+    padding: 7px 5%;
+    box-sizing: border-box;
+    color: white;
+}
+
+.progress-bar {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 15px;
+    border-radius: 50px;
+    background-color: hsl(229, 57%, 11%);
+}
+
+.progress-bar:before {
+    content: "";
+    position: absolute;
+    width: 81.5%;
+    top: 1px;
+    left: 1.5px;
+    right: 1px;
+    bottom: 1px;
+    height: 13px;
+    border-radius: 50px;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+.progress-bar:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 11px;
+    top: 2px;
+    bottom: 1px;
+    right: 18.4%;
+    background-color: hsl(243, 100%, 93%);
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.capacity {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-ballon {
+    position: absolute;
+    top: -46%;
+    width: 30%;
+    height: 80px;
+    right: 5%;
+    border-radius: 10px 10px 0 10px;
+    background-color: white;
+    color: hsl(229, 57%, 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-ballon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -20px;
+    right: 0;
+    border-top: 30px solid white;
+    border-left: 30px solid transparent;
+}
+
+.text-ballon h1 {
+    color: hsl(228, 56%, 26%);
+}
+
+.text-ballon p {
+    color: hsl(229, 7%, 55%);
+}
+
+@media only screen and (max-width: 639px) {
+    #background-desktop-image {
+        display: none;
+    }
+    #background-mobile-image {
+        display: inline-block;
+        height: 100vh;
+    }
+    .information .business-information {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .business-information {
+        width: 20rem;
+    }
+    .progress {
+        width: 20rem;
+        padding: 7px 5% 2rem 5%;
+    }
+    .text-ballon {
+        position: absolute;
+        top: 75%;
+        width: 50%;
+        right: 25%;
+        border-radius: 10px;
+    }
+    .text-ballon:after {
+        content: "";
+        display: none;
+    }
+}
