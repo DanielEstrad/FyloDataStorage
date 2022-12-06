@@ -210,6 +210,7 @@ body {
 
 .text-ballon h1 {
     color: var(--dark-blue);
+    font-size: 2.2rem;
 }
 
 .text-ballon p {
@@ -225,8 +226,18 @@ body {
     }
 
     .progress {
-        align-self: start;
-        height: 100%;
+        text-align: center;
+        height: 75%;
+        align-self: flex-start;
+    }
+
+    .progress > p {
+        align-self: center;
+        justify-self: center;
+    }
+
+    .business-information {
+        height: 13rem;
     }
 
     #background-image {
