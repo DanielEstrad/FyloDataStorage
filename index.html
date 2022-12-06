@@ -8,6 +8,9 @@
     <title>Fylo Data Storage</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -52,8 +55,10 @@
                 </div>
             </div>
         </div>
-        <img src="images/bg-desktop.png" alt="Background waves" id="background-desktop-image">
-        <img src="images/bg-mobile.png" alt="Background waves" id="background-mobile-image">
+        <picture>
+            <source srcset="images/bg-desktop.png" media="(min-width: 768px)">
+            <img id="background-image" src="images/bg-mobile.png" alt="Background waves">
+        </picture>
     </main>
 </body>
 

@@ -1,50 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-:root {}
+:root {
+    --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
 
 body {
-    margin: 0;
-    min-height: 100vh;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--very-dark-blue);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(229, 57%, 11%);
-    font-family: 'Raleway', sans-serif;
 }
 
-#background-desktop-image, #background-mobile-image {
+#background-image {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: 50vh;
     z-index: -1;
 }
 
-#background-mobile-image {
-    display: none;
-}
-
 .information {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    box-sizing: content-box;
-}
-
-.information .business-information {
-    margin-right: 30px;
+    width: 50vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
 }
 
 .business-information {
-    width: 17.5rem;
-    height: 12.5rem;
-    background-color: hsl(228, 56%, 26%);
-    border-radius: 10px 100px 10px 10px;
+    height: 11rem;
+    background-color: var(--dark-blue);
+    border-radius: 10px 5rem 10px 10px;
     display: flex;
     flex-flow: column;
+    gap: 1.5rem;
     justify-content: space-evenly;
-    padding: 2% 5%;
+    padding: 1rem 2.2rem;
     box-sizing: border-box;
 }
 
@@ -54,25 +119,26 @@ body {
 
 .tools button {
     margin-right: 10px;
-    background-color: hsl(229, 57%, 11%);
+    background-color: var(--very-dark-blue);
     border: none;
     padding: 7px 10px;
     border-radius: 7px;
 }
 
 .tools button svg {
-    fill: hsl(229, 57%, 11%);
+    fill: var(--very-dark-blue);
 }
 
 .progress {
     position: relative;
-    width: 35rem;
-    background-color: hsl(228, 56%, 26%);
-    border-radius: 10px 10px 10px 10px;
+    height: 80%;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
     align-self: flex-end;
-    padding: 7px 5%;
-    box-sizing: border-box;
-    color: white;
+    padding: 1.5rem 5%;
+    color: var(--pale-blue);
+    display: grid;
+    gap: 0.5rem;
 }
 
 .progress-bar {
@@ -81,7 +147,7 @@ body {
     width: 100%;
     height: 15px;
     border-radius: 50px;
-    background-color: hsl(229, 57%, 11%);
+    background-color: var(--very-dark-blue);
 }
 
 .progress-bar:before {
@@ -94,7 +160,7 @@ body {
     bottom: 1px;
     height: 13px;
     border-radius: 50px;
-    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    background: var(--gradient);
 }
 
 .progress-bar:after {
@@ -105,7 +171,7 @@ body {
     top: 2px;
     bottom: 1px;
     right: 18.4%;
-    background-color: hsl(243, 100%, 93%);
+    background-color: var(--pale-blue);
     border-radius: 50px;
     z-index: 2;
 }
@@ -124,10 +190,11 @@ body {
     right: 5%;
     border-radius: 10px 10px 0 10px;
     background-color: white;
-    color: hsl(229, 57%, 11%);
+    color: var(--very-dark-blue);
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.825rem;
 }
 
 .text-ballon:after {
@@ -142,39 +209,39 @@ body {
 }
 
 .text-ballon h1 {
-    color: hsl(228, 56%, 26%);
+    color: var(--dark-blue);
 }
 
 .text-ballon p {
-    color: hsl(229, 7%, 55%);
+    color: var(--grayish-blue);
 }
 
-@media only screen and (max-width: 639px) {
-    #background-desktop-image {
-        display: none;
+@media only screen and (max-width: 769px) {
+    .information {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-auto-flow: row;
+        width: 90vw;
     }
-    #background-mobile-image {
-        display: inline-block;
-        height: 100vh;
-    }
-    .information .business-information {
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-    .business-information {
-        width: 20rem;
-    }
+
     .progress {
-        width: 20rem;
-        padding: 7px 5% 2rem 5%;
+        align-self: start;
+        height: 100%;
     }
+
+    #background-image {
+        top: 0;
+        height: 100%;
+    }
+
     .text-ballon {
         position: absolute;
-        top: 75%;
+        top: 80%;
         width: 50%;
         right: 25%;
         border-radius: 10px;
     }
+
     .text-ballon:after {
         content: "";
         display: none;
